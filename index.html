@@ -25,7 +25,7 @@
 </head>
 
 <body>
-0
+<h1 id='count'>0</h1>
 </body>
 <script>
     async function check() {
@@ -38,7 +38,7 @@
         } else {
             document.body.style.backgroundColor = 'red'
         }
-        document.body.innerText = data.stats.views
+        document.getElementById('count').innerText = data.stats.views
     }
 
     setInterval(function () {
