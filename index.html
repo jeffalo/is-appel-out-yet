@@ -29,9 +29,10 @@
 </body>
 <script>
     async function check() {
+        console.log('fetching')
         var res = await fetch('/api/check.js')
         var data = await res.text()
-
+        console.log(data.includes('appel'))
         if (data.includes('appel')) {
             document.body.style.backgroundColor = 'green'
         } else {
@@ -39,9 +40,9 @@
         }
     }
 
-    setTimeout(function () {
+    setInterval(function () {
         check()
-    }, 2000)
+    }, 500)
 </script>
 
 </html>
