@@ -32,12 +32,7 @@
         console.log('fetching')
         var res = await fetch('/api/check.js')
         var data = await res.json()
-        console.log(data.includes('appel'))
-        if (data.includes('appel')) {
-            document.body.style.backgroundColor = 'green'
-        } else {
-            document.body.style.backgroundColor = 'red'
-        }
+
         document.getElementById('count').innerText = data.stats.views
     }
 
