@@ -25,19 +25,20 @@
 </head>
 
 <body>
-
+0
 </body>
 <script>
     async function check() {
         console.log('fetching')
         var res = await fetch('/api/check.js')
-        var data = await res.text()
+        var data = await res.json()
         console.log(data.includes('appel'))
         if (data.includes('appel')) {
             document.body.style.backgroundColor = 'green'
         } else {
             document.body.style.backgroundColor = 'red'
         }
+        document.body.innerText = data.stats.views
     }
 
     setInterval(function () {
